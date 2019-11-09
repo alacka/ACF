@@ -1,0 +1,17 @@
+<?php
+$fields = [
+  'subway'  => 'subway',
+  'address' => 'map-marker',
+  'phone'   => 'phone',
+  'email'   => 'envelope',
+];
+foreach ( $fields as $field => $icon ) {
+  $value = get_field( "ac_{$field}", $post->ID );
+  if ( $value ) {
+    echo "<li><i class=\"fa fa-{$icon}\"></i><strong>$value</strong></li>";
+  }
+}
+?>
+
+
+$icon - у fontawesome такие же названия, как и у custom field
